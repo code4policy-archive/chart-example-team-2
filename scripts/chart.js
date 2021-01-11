@@ -1,4 +1,4 @@
-function drawLineChart(cssSelector){
+function drawLineChart(cssSelector, chartname){
   var margin = {top: 20, right: 50, bottom: 30, left: 50},
       width = 960 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
@@ -30,7 +30,7 @@ function drawLineChart(cssSelector){
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .attr("class", "chart")
-      .attr("id", "apple-stock-chart")
+      .attr("id", chartname)
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -101,5 +101,6 @@ function drawLineChart(cssSelector){
 
 }
 
-drawLineChart('#apple-stock-chart');
-drawLineChart('#apple-stock-chart-2');
+drawLineChart('#apple-stock-chart', 'apple-stock-chart');
+drawLineChart('#apple-stock-chart-2', 'apple-stock-chart-2');
+
